@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+void delete_first_occurrence() {
+    int N, delete_element, found = 0;
+   
+
+    scanf("%d", &N);
+   
+    int arr[N];
+   
+
+    for (int i = 0; i < N; i++) {
+        scanf("%d", &arr[i]);
+    }
+   
+    scanf("%d", &delete_element);
+    for (int i = 0; i < N; i++) {
+        if (arr[i] == delete_element) {
+            found = 1;
+            for (int j = i; j < N - 1; j++) {
+                arr[j] = arr[j + 1];
+            }
+            N--;
+            break;
+        }
+    }
+   
+
+    for (int i = 0; i < N; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+}
+
+int main() {
+    delete_first_occurrence();
+    return 0;
+}
